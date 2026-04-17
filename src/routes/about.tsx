@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import doreen from "@/assets/doreen.jpg";
+import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -44,13 +45,13 @@ function About() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr]">
-        <div>
+        <Reveal>
           <div className="aspect-[3/4] w-full max-w-sm overflow-hidden rounded-3xl border border-border bg-secondary/60 shadow-[0_20px_40px_-20px_rgba(61,43,31,0.35)]">
             <img src={doreen} alt="Doreen Ukeje portrait" className="h-full w-full object-cover" />
           </div>
-        </div>
+        </Reveal>
 
-        <div>
+        <Reveal delay={0.1}>
           <p className="text-xs uppercase tracking-[0.3em] text-gold">About me</p>
           <h1 className="mt-3 font-serif text-4xl md:text-5xl">
             Blending creativity <span className="italic">with strategy.</span>
@@ -70,21 +71,21 @@ function About() {
               Let's collaborate and amplify your brand's voice in the digital realm!
             </p>
           </div>
-        </div>
+        </Reveal>
       </div>
 
       {/* Skills */}
       <section className="mt-24">
-        <div className="mb-10 flex items-end justify-between">
+        <Reveal className="mb-10 flex items-end justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gold">Skills</p>
             <h2 className="mt-2 font-serif text-3xl md:text-4xl">What I bring to the table</h2>
           </div>
-        </div>
+        </Reveal>
 
         <div className="grid gap-6 md:grid-cols-2">
-          <SkillCard title="Soft skills" items={softSkills} />
-          <SkillCard title="Technical skills" items={techSkills} />
+          <Reveal><SkillCard title="Soft skills" items={softSkills} /></Reveal>
+          <Reveal delay={0.1}><SkillCard title="Technical skills" items={techSkills} /></Reveal>
         </div>
       </section>
     </div>

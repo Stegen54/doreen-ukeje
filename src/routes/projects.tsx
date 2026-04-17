@@ -1,4 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Reveal } from "@/components/Reveal";
+import { Lightbox } from "@/components/Lightbox";
 import img1 from "@/assets/img1.jpg";
 import img2 from "@/assets/img2.jpg";
 import img3 from "@/assets/img3.jpg";
@@ -81,14 +84,14 @@ const projects: Project[] = [
 function Projects() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-20">
-      <div className="max-w-2xl">
+      <Reveal className="max-w-2xl">
         <p className="text-xs uppercase tracking-[0.3em] text-gold">Recent work</p>
         <h1 className="mt-3 font-serif text-4xl md:text-5xl">My Recent Projects</h1>
         <p className="mt-4 text-foreground/75">
           A selection of client collaborations — captions, graphics, video editing, campaign
           management, and analytics reporting.
         </p>
-      </div>
+      </Reveal>
 
       <div className="mt-16 space-y-24">
         {projects.map((p) => (
@@ -100,41 +103,61 @@ function Projects() {
 }
 
 function ProjectBlock({ p }: { p: Project }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
-    <article>
-      <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <div className="font-serif text-5xl text-gold/80">{p.num}</div>
-          <p className="mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">Client {p.num}</p>
-          <h2 className="mt-4 font-serif text-3xl leading-tight md:text-4xl">{p.company}</h2>
-          {p.tagline && <p className="mt-2 italic text-foreground/70">{p.tagline}</p>}
+    <Reveal>
+      <article>
+        <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <div className="font-serif text-5xl text-gold/80">{p.num}</div>
+            <p className="mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">Client {p.num}</p>
+            <h2 className="mt-4 font-serif text-3xl leading-tight md:text-4xl">{p.company}</h2>
+            {p.tagline && <p className="mt-2 italic text-foreground/70">{p.tagline}</p>}
 
-          <dl className="mt-8 space-y-3 text-sm">
-            <Row k="Date" v={p.date} />
-            <Row k="Client" v={p.client} />
-            <Row k="Company" v={p.company} />
-          </dl>
+            <dl className="mt-8 space-y-3 text-sm">
+              <Row k="Date" v={p.date} />
+              <Row k="Client" v={p.client} />
+              <Row k="Company" v={p.company} />
+            </dl>
 
-          <div className="mt-8 rounded-2xl border border-border bg-card p-6">
-            <p className="text-xs uppercase tracking-[0.25em] text-gold">Role description</p>
-            <p className="mt-3 text-sm leading-relaxed text-foreground/85">{p.role}</p>
+            <div className="mt-8 rounded-2xl border border-border bg-card p-6">
+              <p className="text-xs uppercase tracking-[0.25em] text-gold">Role description</p>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/85">{p.role}</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            {p.images.map((src, i) => (
+              <button
+                type="button"
+                key={i}
+                onClick={() => setOpenIndex(i)}
+                aria-label={`Open image ${i + 1} of ${p.company}`}
+                className={`group relative overflow-hidden rounded-2xl border border-border bg-secondary/40 transition hover:border-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+                  i === 0 ? "col-span-2 aspect-[16/10]" : "aspect-square"
+                }`}
+              >
+                <img
+                  src={src}
+                  alt={`${p.company} project ${i + 1}`}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  loading="lazy"
+                />
+              </button>
+            ))}
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          {p.images.map((src, i) => (
-            <div
-              key={i}
-              className={`overflow-hidden rounded-2xl border border-border bg-secondary/40 ${
-                i === 0 ? "col-span-2 aspect-[16/10]" : "aspect-square"
-              }`}
-            >
-              <img src={src} alt={`${p.company} project ${i + 1}`} className="h-full w-full object-cover" loading="lazy" />
-            </div>
-          ))}
-        </div>
-      </div>
-    </article>
+        <Lightbox
+          images={p.images}
+          index={openIndex}
+          alt={p.company}
+          onClose={() => setOpenIndex(null)}
+          onIndexChange={setOpenIndex}
+        />
+      </article>
+    </Reveal>
   );
 }
 
