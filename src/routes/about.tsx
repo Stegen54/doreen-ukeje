@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import doreen from "@/assets/doreen.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -44,12 +45,8 @@ function About() {
     <div className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <div className="aspect-[3/4] w-full max-w-sm overflow-hidden rounded-3xl border border-border bg-secondary/60">
-            <div className="flex h-full items-center justify-center text-center p-6">
-              <p className="text-sm uppercase tracking-[0.25em] text-muted-foreground">
-                Portrait coming soon
-              </p>
-            </div>
+          <div className="aspect-[3/4] w-full max-w-sm overflow-hidden rounded-3xl border border-border bg-secondary/60 shadow-[0_20px_40px_-20px_rgba(61,43,31,0.35)]">
+            <img src={doreen} alt="Doreen Ukeje portrait" className="h-full w-full object-cover" />
           </div>
         </div>
 
