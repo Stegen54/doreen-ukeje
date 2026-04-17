@@ -71,21 +71,21 @@ function About() {
               Let's collaborate and amplify your brand's voice in the digital realm!
             </p>
           </div>
-        </div>
+        </Reveal>
       </div>
 
       {/* Skills */}
       <section className="mt-24">
-        <div className="mb-10 flex items-end justify-between">
+        <Reveal className="mb-10 flex items-end justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gold">Skills</p>
             <h2 className="mt-2 font-serif text-3xl md:text-4xl">What I bring to the table</h2>
           </div>
-        </div>
+        </Reveal>
 
         <div className="grid gap-6 md:grid-cols-2">
-          <SkillCard title="Soft skills" items={softSkills} />
-          <SkillCard title="Technical skills" items={techSkills} />
+          <Reveal><SkillCard title="Soft skills" items={softSkills} /></Reveal>
+          <Reveal delay={0.1}><SkillCard title="Technical skills" items={techSkills} /></Reveal>
         </div>
       </section>
     </div>
