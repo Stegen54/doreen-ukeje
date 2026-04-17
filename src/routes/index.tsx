@@ -1,26 +1,111 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Doreen Ukeje — Social Media Manager" },
+      {
+        name: "description",
+        content:
+          "Welcome to Doreen Ukeje's portfolio. Social media manager crafting compelling content and growth strategies.",
+      },
+      { property: "og:title", content: "Doreen Ukeje — Social Media Manager" },
+      {
+        property: "og:description",
+        content: "Crafting compelling content and analyzing metrics to elevate your brand online.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div>
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute -left-32 top-20 h-[420px] w-[420px] rounded-full bg-gold/15 blur-3xl" />
+          <div className="absolute right-0 top-0 h-[320px] w-[320px] rounded-full bg-accent/20 blur-3xl" />
+        </div>
+
+        <div className="mx-auto grid max-w-6xl gap-14 px-6 pb-20 pt-16 md:grid-cols-[1.1fr_0.9fr] md:pt-24">
+          <div className="flex flex-col justify-center">
+            <span className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-gold/40 bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.25em] text-gold">
+              <Sparkles className="h-3 w-3" /> Portfolio 2026
+            </span>
+            <h1 className="font-serif text-5xl leading-[1.05] sm:text-6xl md:text-7xl">
+              Doreen <span className="italic text-gold">Ukeje</span>
+            </h1>
+            <p className="mt-3 text-sm uppercase tracking-[0.35em] text-muted-foreground">
+              Social Media Manager
+            </p>
+
+            <h2 className="mt-10 font-serif text-3xl md:text-4xl">Welcome.</h2>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-foreground/80">
+              Hi there! I'm thrilled to have you here. Explore the world of social media through my
+              lens — whether it's crafting compelling content or analyzing metrics, I'm passionate
+              about making waves in the digital world.
+            </p>
+            <p className="mt-3 max-w-xl text-base leading-relaxed text-foreground/80">
+              Together, let's discover how to elevate your brand's online presence and bring your
+              story to life.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                to="/projects"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                See my work <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm font-medium transition-colors hover:border-gold hover:text-gold"
+              >
+                Let's connect
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative flex items-center justify-center">
+            <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-[2rem] border border-border bg-secondary/60 shadow-[0_30px_60px_-30px_rgba(61,43,31,0.35)]">
+              <div className="flex h-full w-full items-center justify-center p-8 text-center">
+                <div>
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-gold/50 text-gold">
+                    <Sparkles className="h-6 w-6" />
+                  </div>
+                  <p className="font-serif text-xl">Your photo here</p>
+                  <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    Upload a headshot to feature it
+                  </p>
+                </div>
+              </div>
+              <div className="absolute -bottom-4 -right-4 hidden h-24 w-24 rounded-2xl bg-gold/90 md:block" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Highlight strip */}
+      <section className="border-y border-border bg-secondary/30">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-6 py-10 md:grid-cols-4">
+          {[
+            { n: "3+", l: "Clients served" },
+            { n: "5 mo", l: "Experience" },
+            { n: "100%", l: "Recommended" },
+            { n: "24/7", l: "On-brand voice" },
+          ].map((s) => (
+            <div key={s.l} className="text-center">
+              <div className="font-serif text-3xl text-gold md:text-4xl">{s.n}</div>
+              <div className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                {s.l}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
