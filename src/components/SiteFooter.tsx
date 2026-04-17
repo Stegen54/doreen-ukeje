@@ -27,7 +27,7 @@ export function SiteFooter() {
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
               <Linkedin className="h-4 w-4 text-gold" />
-              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" className="hover:text-gold">
+              <a href="https://www.linkedin.com/in/doreen-ukeje-6b04183a7/" target="_blank" rel="noreferrer" className="hover:text-gold">
                 Doreen Ukeje
               </a>
             </li>

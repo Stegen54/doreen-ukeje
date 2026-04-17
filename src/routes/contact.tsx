@@ -39,7 +39,7 @@ function Contact() {
               icon={<Linkedin className="h-5 w-5" />}
               label="LinkedIn"
               value="Doreen Ukeje"
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/doreen-ukeje-6b04183a7/"
             />
             <ContactRow
               icon={<Phone className="h-5 w-5" />}
