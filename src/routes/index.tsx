@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import doreen from "@/assets/doreen.jpg";
 
 export const Route = createFileRoute("/")({
@@ -33,9 +33,6 @@ function Index() {
 
         <div className="mx-auto grid max-w-6xl gap-14 px-6 pb-20 pt-16 md:grid-cols-[1.1fr_0.9fr] md:pt-24">
           <div className="flex flex-col justify-center">
-            <span className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-gold/40 bg-background/60 px-3 py-1 text-xs uppercase tracking-[0.25em] text-gold">
-              <Sparkles className="h-3 w-3" /> Portfolio 2026
-            </span>
             <h1 className="font-serif text-5xl leading-[1.05] sm:text-6xl md:text-7xl">
               Doreen <span className="italic text-gold">Ukeje</span>
             </h1>
