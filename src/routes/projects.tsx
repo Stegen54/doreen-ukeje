@@ -54,7 +54,7 @@ const projects: Project[] = [
     client: "Ralphael Okonkwo",
     role:
       "I manage content creation, social media, performance analysis, and industry trends to uphold their impactful presence.",
-    images: [img1, img2, img3],
+    images: [img1, img2, img3, land, survey],
   },
   {
     num: "02",
@@ -64,7 +64,7 @@ const projects: Project[] = [
     client: "Ralphael Okonkwo",
     role:
       "I manage all their social media accounts. I edit videos, check trends, analyse performance, and help boost the company's online presence.",
-    images: [img4, img5],
+    images: [img4, img5, winock, colasolar, starplus, luxpower],
   },
   {
     num: "03",
@@ -74,7 +74,7 @@ const projects: Project[] = [
     client: "Justin Ukeje",
     role:
       "My role involves creating and executing plans to boost brand visibility, interaction, and traffic across diverse social media channels.",
-    images: [img6, img7, img8, img9],
+    images: [img6, img7, img8, img9, tfingersRender],
   },
 ];
 
