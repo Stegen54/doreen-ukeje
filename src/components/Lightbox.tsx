@@ -86,12 +86,21 @@ export function Lightbox({ images, index, alt = "Image", onClose, onIndexChange 
             key={index}
             src={images[index]}
             alt={`${alt} ${index + 1}`}
-            className="max-h-[85vh] max-w-[92vw] rounded-xl object-contain shadow-2xl"
+            className="max-h-[85vh] max-w-[92vw] touch-pan-y select-none rounded-xl object-contain shadow-2xl"
+            draggable={false}
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.25}
+            onDragEnd={(_, info) => {
+              const threshold = 60;
+              if (info.offset.x < -threshold || info.velocity.x < -400) next();
+              else if (info.offset.x > threshold || info.velocity.x > 400) prev();
+            }}
           />
 
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-1.5 text-sm text-white backdrop-blur">
