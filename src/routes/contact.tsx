@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Phone, Linkedin } from "lucide-react";
+import doreen from "@/assets/doreen.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -58,14 +59,7 @@ function Contact() {
 
         <div className="relative">
           <div className="aspect-[4/5] w-full overflow-hidden rounded-[2rem] border border-border bg-secondary/60 shadow-[0_30px_60px_-30px_rgba(61,43,31,0.35)]">
-            <div className="flex h-full items-center justify-center p-8 text-center">
-              <div>
-                <p className="font-serif text-2xl">Your portrait</p>
-                <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  Upload to feature here
-                </p>
-              </div>
-            </div>
+            <img src={doreen} alt="Doreen Ukeje" className="h-full w-full object-cover" />
           </div>
           <div className="absolute -bottom-5 -left-5 hidden h-28 w-28 rounded-2xl bg-gold/90 md:block" />
         </div>

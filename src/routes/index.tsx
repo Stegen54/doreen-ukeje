@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles } from "lucide-react";
+import doreen from "@/assets/doreen.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -71,17 +72,11 @@ function Index() {
 
           <div className="relative flex items-center justify-center">
             <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-[2rem] border border-border bg-secondary/60 shadow-[0_30px_60px_-30px_rgba(61,43,31,0.35)]">
-              <div className="flex h-full w-full items-center justify-center p-8 text-center">
-                <div>
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-gold/50 text-gold">
-                    <Sparkles className="h-6 w-6" />
-                  </div>
-                  <p className="font-serif text-xl">Your photo here</p>
-                  <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    Upload a headshot to feature it
-                  </p>
-                </div>
-              </div>
+              <img
+                src={doreen}
+                alt="Doreen Ukeje, social media manager"
+                className="h-full w-full object-cover"
+              />
               <div className="absolute -bottom-4 -right-4 hidden h-24 w-24 rounded-2xl bg-gold/90 md:block" />
             </div>
           </div>

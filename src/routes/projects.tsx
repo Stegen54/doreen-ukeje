@@ -8,6 +8,13 @@ import img6 from "@/assets/img6.jpg";
 import img7 from "@/assets/img7.jpg";
 import img8 from "@/assets/img8.jpg";
 import img9 from "@/assets/img9.jpg";
+import land from "@/assets/land.jpg";
+import survey from "@/assets/survey.jpg";
+import colasolar from "@/assets/colasolar.jpg";
+import starplus from "@/assets/starplus.jpg";
+import winock from "@/assets/winock.jpg";
+import luxpower from "@/assets/luxpower.jpg";
+import tfingersRender from "@/assets/tfingers-render.jpg";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
