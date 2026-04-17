@@ -31,14 +31,14 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Doreen Ukeje — Social Media Manager Portfolio" },
+      { title: "Doreen Ukeje - Social Media Manager Portfolio" },
       {
         name: "description",
         content:
           "Portfolio of Doreen Ukeje — social media manager, content strategist, and video editor helping brands grow online.",
       },
       { name: "author", content: "Doreen Ukeje" },
-      { property: "og:title", content: "Doreen Ukeje — Social Media Manager Portfolio" },
+      { property: "og:title", content: "Doreen Ukeje - Social Media Manager Portfolio" },
       {
         property: "og:description",
         content:
@@ -46,6 +46,12 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Doreen Ukeje - Social Media Manager Portfolio" },
+      { name: "description", content: "A digital portfolio showcasing architectural and solar projects, featuring detailed project galleries and client testimonials." },
+      { property: "og:description", content: "A digital portfolio showcasing architectural and solar projects, featuring detailed project galleries and client testimonials." },
+      { name: "twitter:description", content: "A digital portfolio showcasing architectural and solar projects, featuring detailed project galleries and client testimonials." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/62a0179f-2d1d-4de3-ad90-283e0cbae707" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/62a0179f-2d1d-4de3-ad90-283e0cbae707" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
   }),
