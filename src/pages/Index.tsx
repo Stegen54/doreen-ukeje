@@ -1,27 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import doreen from "@/assets/doreen.jpg";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Doreen Ukeje — Social Media Manager" },
-      {
-        name: "description",
-        content:
-          "Welcome to Doreen Ukeje's portfolio. Social media manager crafting compelling content and growth strategies.",
-      },
-      { property: "og:title", content: "Doreen Ukeje — Social Media Manager" },
-      {
-        property: "og:description",
-        content: "Crafting compelling content and analyzing metrics to elevate your brand online.",
-      },
-    ],
-  }),
-  component: Index,
-});
-
-function Index() {
+export default function Index() {
   return (
     <div>
       {/* Hero */}

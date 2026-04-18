@@ -1,25 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import doreen from "@/assets/doreen.jpg";
 import { Reveal } from "@/components/Reveal";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About — Doreen Ukeje" },
-      {
-        name: "description",
-        content:
-          "About Doreen Ukeje: social media manager, content strategist, and video editor trained at Skill2Scale academy.",
-      },
-      { property: "og:title", content: "About — Doreen Ukeje" },
-      {
-        property: "og:description",
-        content: "Meet Doreen — blending creativity with strategy to craft narratives that resonate.",
-      },
-    ],
-  }),
-  component: About,
-});
 
 const softSkills = [
   "Creativity",
@@ -41,7 +21,7 @@ const techSkills = [
   "Analytics & data interpretation",
 ];
 
-function About() {
+export default function About() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr]">
@@ -74,7 +54,6 @@ function About() {
         </Reveal>
       </div>
 
-      {/* Skills */}
       <section className="mt-24">
         <Reveal className="mb-10 flex items-end justify-between">
           <div>

@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { Lightbox } from "@/components/Lightbox";
@@ -18,25 +17,6 @@ import starplus from "@/assets/starplus.jpg";
 import winock from "@/assets/winock.jpg";
 import luxpower from "@/assets/luxpower.jpg";
 import tfingersRender from "@/assets/tfingers-render.jpg";
-
-export const Route = createFileRoute("/projects")({
-  head: () => ({
-    meta: [
-      { title: "Projects — Doreen Ukeje" },
-      {
-        name: "description",
-        content:
-          "Client projects by Doreen Ukeje: Arch-Mate Estate & Homes, Arch-Mate Solar and Power Solutions, and TFingers.",
-      },
-      { property: "og:title", content: "Projects — Doreen Ukeje" },
-      {
-        property: "og:description",
-        content: "A look at real client work: content, video editing, analytics, and growth.",
-      },
-    ],
-  }),
-  component: Projects,
-});
 
 type Project = {
   num: string;
@@ -81,7 +61,7 @@ const projects: Project[] = [
   },
 ];
 
-function Projects() {
+export default function Projects() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-20">
       <Reveal className="max-w-2xl">

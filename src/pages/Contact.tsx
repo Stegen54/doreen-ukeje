@@ -1,27 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Phone, Linkedin } from "lucide-react";
 import doreen from "@/assets/doreen.jpg";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Doreen Ukeje" },
-      {
-        name: "description",
-        content:
-          "Get in touch with Doreen Ukeje — email, phone, and LinkedIn for social media management collaboration.",
-      },
-      { property: "og:title", content: "Contact — Doreen Ukeje" },
-      {
-        property: "og:description",
-        content: "Let's bring your brand's story to life in the digital world.",
-      },
-    ],
-  }),
-  component: Contact,
-});
-
-function Contact() {
+export default function Contact() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid gap-14 md:grid-cols-[1fr_1fr] md:items-center">

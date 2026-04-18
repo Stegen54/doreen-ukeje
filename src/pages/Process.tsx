@@ -1,24 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
-
-export const Route = createFileRoute("/process")({
-  head: () => ({
-    meta: [
-      { title: "Work Process — Doreen Ukeje" },
-      {
-        name: "description",
-        content:
-          "How Doreen works: consultation, strategy, content creation, management, and analysis & reporting.",
-      },
-      { property: "og:title", content: "Work Process — Doreen Ukeje" },
-      {
-        property: "og:description",
-        content: "A five-step approach to growing your brand on social media.",
-      },
-    ],
-  }),
-  component: Process,
-});
 
 const steps = [
   {
@@ -43,7 +23,7 @@ const steps = [
   },
 ];
 
-function Process() {
+export default function Process() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-20">
       <Reveal className="max-w-2xl">

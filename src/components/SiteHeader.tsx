@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -26,15 +26,18 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
-            <Link
+            <NavLink
               key={l.to}
               to={l.to}
-              className="text-sm tracking-wide text-foreground/80 transition-colors hover:text-gold"
-              activeProps={{ className: "text-gold font-medium" }}
-              activeOptions={{ exact: l.to === "/" }}
+              end={l.to === "/"}
+              className={({ isActive }) =>
+                `text-sm tracking-wide transition-colors hover:text-gold ${
+                  isActive ? "text-gold font-medium" : "text-foreground/80"
+                }`
+              }
             >
               {l.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
 
@@ -51,16 +54,17 @@ export function SiteHeader() {
         <div className="border-t border-border bg-background md:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col px-6 py-3">
             {links.map((l) => (
-              <Link
+              <NavLink
                 key={l.to}
                 to={l.to}
+                end={l.to === "/"}
                 onClick={() => setOpen(false)}
-                className="py-2 text-sm text-foreground/80"
-                activeProps={{ className: "text-gold font-medium" }}
-                activeOptions={{ exact: l.to === "/" }}
+                className={({ isActive }) =>
+                  `py-2 text-sm ${isActive ? "text-gold font-medium" : "text-foreground/80"}`
+                }
               >
                 {l.label}
-              </Link>
+              </NavLink>
             ))}
           </nav>
         </div>

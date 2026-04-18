@@ -1,25 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Quote } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-
-export const Route = createFileRoute("/testimonials")({
-  head: () => ({
-    meta: [
-      { title: "Testimonials — Doreen Ukeje" },
-      {
-        name: "description",
-        content:
-          "What clients say about working with Doreen Ukeje — social media strategy, creativity, and measurable results.",
-      },
-      { property: "og:title", content: "Testimonials — Doreen Ukeje" },
-      {
-        property: "og:description",
-        content: "Real feedback from Arch-Mate Estate & Homes, Arch-Mate Groups, and TFingers.",
-      },
-    ],
-  }),
-  component: Testimonials,
-});
 
 const items = [
   {
@@ -42,7 +22,7 @@ const items = [
   },
 ];
 
-function Testimonials() {
+export default function Testimonials() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-20">
       <Reveal className="max-w-2xl">
