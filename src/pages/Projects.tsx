@@ -12,7 +12,6 @@ import img8 from "@/assets/img8.jpg";
 import img9 from "@/assets/img9.jpg";
 import land from "@/assets/land.jpg";
 import survey from "@/assets/survey.jpg";
-import colasolar from "@/assets/colasolar.jpg";
 import starplus from "@/assets/starplus.jpg";
 import winock from "@/assets/winock.jpg";
 import luxpower from "@/assets/luxpower.jpg";
@@ -37,7 +36,7 @@ const projects: Project[] = [
     client: "Ralphael Okonkwo",
     role:
       "I manage content creation, social media, performance analysis, and industry trends to uphold their impactful presence.",
-    images: [img1, img2, img3, land, survey],
+    images: [img8, img9, land],
   },
   {
     num: "02",
@@ -47,7 +46,7 @@ const projects: Project[] = [
     client: "Ralphael Okonkwo",
     role:
       "I manage all their social media accounts. I edit videos, check trends, analyse performance, and help boost the company's online presence.",
-    images: [img4, img5, winock, colasolar, starplus, luxpower],
+    images: [img1, img2, luxpower, starplus, winock],
   },
   {
     num: "03",
@@ -57,7 +56,7 @@ const projects: Project[] = [
     client: "Justin Ukeje",
     role:
       "My role involves creating and executing plans to boost brand visibility, interaction, and traffic across diverse social media channels.",
-    images: [img6, img7, img8, img9, tfingersRender],
+    images: [img3, img4, img5, img6, img7, survey, tfingersRender],
   },
 ];
 
