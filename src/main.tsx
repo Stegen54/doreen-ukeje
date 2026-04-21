@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "@/pages/Index";
 import About from "@/pages/About";
 import Projects from "@/pages/Projects";
@@ -15,6 +16,7 @@ import NotFound from "@/pages/NotFound";
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="flex min-h-screen flex-col">
         <SiteHeader />
         <main className="flex-1">
